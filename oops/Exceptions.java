@@ -1,5 +1,7 @@
 package oops;
+
 import java.util.Scanner;
+
 public class Exceptions {
     public static void main(String[] args) {
         // INTRODUCTION TO TRY/CATCH BLOCK FOR HANDLING EXCEPTIONS...
@@ -61,17 +63,15 @@ public class Exceptions {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the value of index");
         int ind = sc.nextInt();
-        try{
+        try {
             System.out.println("Welcome to video no 82");
-            try{
+            try {
                 System.out.println(marks[ind]);
-            }
-            catch(ArrayIndexOutOfBoundsException e){
+            } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Sorry this index does not exist");
                 System.out.println("Exception in level 2");
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Exception in level 1");
         }
     }

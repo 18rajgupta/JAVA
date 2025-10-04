@@ -2,9 +2,9 @@ package oops;
 
 import java.util.Scanner;
 
-class MyException extends Exception{
+class MyException extends Exception {
     @Override
-    public String toString(){
+    public String toString() {
         return "I am toString()";
     }
 
@@ -14,9 +14,9 @@ class MyException extends Exception{
     }
 }
 
-class NegativeRadiusException extends Exception{
+class NegativeRadiusException extends Exception {
     @Override
-    public String toString(){
+    public String toString() {
         return "Radius cannot be negative";
     }
 
@@ -25,37 +25,37 @@ class NegativeRadiusException extends Exception{
         return "Radius cannot be negative";
     }
 }
+
 public class ExceptionClass {
-    public static double area(int r) throws NegativeRadiusException{
-        if(r < 0){
+    public static double area(int r) throws NegativeRadiusException {
+        if (r < 0) {
             throw new NegativeRadiusException();
         }
         double result = Math.PI * r * r;
         return result;
     }
 
-    public static int divide(int a, int b) throws ArithmeticException{
-        int result = a/b;
+    public static int divide(int a, int b) throws ArithmeticException {
+        int result = a / b;
         return result;
     }
 
-    public static int greet(){
-        try{
+    public static int greet() {
+        try {
             int a = 50;
             int b = 0;
-            int c = a/b;
+            int c = a / b;
             return c;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
-        }
-        finally {
+        } finally {
             System.out.println("Cleaning up resources...This is the end of the function");
         }
         System.out.println("Cleaning up resources...This is the end of the function");
 
         return -1;
     }
+
     public static void main(String[] args) {
         // USING EXCEPTION CLASS...
 //        Scanner sc = new Scanner(System.in);
@@ -93,24 +93,21 @@ public class ExceptionClass {
 
         int a = 7;
         int b = 9;
-        while(true) {
-            try{
-                System.out.println(a/b);
-            }
-            catch(Exception e){
+        while (true) {
+            try {
+                System.out.println(a / b);
+            } catch (Exception e) {
                 System.out.println(e);
                 break;
-            }
-            finally{
+            } finally {
                 System.out.println("I am finally for value of b = " + b);
             }
             b--;
         }
 
-        try{
-            System.out.println(5/0);
-        }
-        finally {
+        try {
+            System.out.println(5 / 0);
+        } finally {
             System.out.println("Yes this is finally");
         }
     }
